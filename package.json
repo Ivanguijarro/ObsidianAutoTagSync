@@ -1,0 +1,27 @@
+{
+  "name": "obsidian-auto-tag-sync",
+  "version": "1.0.0",
+  "description": "Automatically synchronizes content tags with frontmatter.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ivanguijarro/ObsidianAutoTagSync.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Ivanguijarro/ObsidianAutoTagSync/issues"
+  },
+  "homepage": "https://github.com/Ivanguijarro/ObsidianAutoTagSync#readme",
+  "dependencies": {
+    "obsidian": "^1.7.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5"
+  }
+}

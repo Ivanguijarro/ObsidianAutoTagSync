@@ -1,0 +1,11 @@
+{
+    "id": "auto-tag-sync",
+    "name": "Auto Tag Sync",
+    "version": "1.0.0",
+    "minAppVersion": "0.15.0",
+    "description": "Automatically synchronizes content tags with frontmatter.",
+    "author": "Ivanguijarro",
+    "authorUrl": "https://github.com/Ivanguijarro/ObsidianAutoTagSync.git",
+    "isDesktopOnly": false
+  }
+  

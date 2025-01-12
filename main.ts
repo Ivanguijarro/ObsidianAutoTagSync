@@ -46,9 +46,21 @@ export default class AutoTagSync extends Plugin {
     if (tagsInFrontmatter) {
       // Si ya hay una línea "tags:", actualízala
       tagsInFrontmatter = tagsInFrontmatter.replace(/^tags:\s*\[?(.*?)\]?\s*$/, (_, tags) => {
+        // Obtener las etiquetas existentes en el frontmatter
         const existingTags = tags.split(",").map((tag: string) => tag.trim());
-        const mergedTags = Array.from(new Set([...existingTags, ...tagsInBody]));
-        return `tags: [${mergedTags.join(", ")}]`;
+    
+        // Filtrar etiquetas que siguen presentes en el contenido del archivo
+        const updatedTags = existingTags.filter((tag: string) => tagsInBody.includes(tag));
+    
+        // Agregar nuevas etiquetas que aparezcan en el cuerpo y no estén en el frontmatter
+        for (const tag of tagsInBody) {
+          if (!updatedTags.includes(tag)) {
+            updatedTags.push(tag);
+          }
+        }
+    
+        // Devolver las etiquetas actualizadas
+        return `tags: [${updatedTags.join(", ")}]`;
       });
     } else if (tagsInBody.length > 0) {
       // Si no hay línea "tags:", agrégala
